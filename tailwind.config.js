@@ -8,8 +8,8 @@ module.exports = {
       }
     },
       fontFamily: {
-        'sans' : ['Nunito Sans', ...defaultTheme.fontFamily.sans],
-      },
+        'sans' : ['League Spartan', ...defaultTheme.fontFamily.sans],
+      }
     },
   plugins: [],
 }
