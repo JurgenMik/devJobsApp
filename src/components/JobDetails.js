@@ -57,7 +57,7 @@ function JobDetails({ details }) {
                             <ul className="ml-16 mt-6 space-y-2">
                             {details.requirements.items.map(( item, index ) => {
                                 return (
-                                    <li className="list-disc">
+                                    <li className="list-disc" key={index}>
                                         {item}
                                     </li>
                                 )
@@ -72,7 +72,7 @@ function JobDetails({ details }) {
                             <ul className="ml-16 mt-6 space-y-2">
                                 {details.role.items.map(( item, index ) => {
                                     return (
-                                        <li className="list-decimal">
+                                        <li className="list-decimal" key={index}>
                                             {item}
                                         </li>
                                     )
