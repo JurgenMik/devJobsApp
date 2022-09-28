@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import data from '../data.json';
 
 
-function DevJobs() {
+function DevJobs({ handleClick, filterTitle, filterLocation }) {
 
     const [jobs, setJobs] = useState([]);
 
@@ -11,15 +11,27 @@ function DevJobs() {
     }, []);
 
     const getJobs = () => {
-        setJobs(jobs.concat(data))
+        setJobs(jobs.concat(data));
     }
+
+    const filteredJobs = () => {
+        if (filterTitle) {
+            return jobs.filter(info => info.position.includes(filterTitle));
+        }
+        if (filterLocation) {
+            return jobs.filter(info => info.location.includes(filterLocation))
+        }
+        return jobs;
+    }
+
+    let filtered = useMemo(filteredJobs, [jobs, filterTitle, filterLocation])
 
     return (
         <div className="lg:w-2/3 w-4/5 grid lg:grid-cols-3 grid-cols-2 gap-32 mt-36 ml-auto mr-auto">
-            {jobs.map((job, index) => {
+            {filtered.map((job, index) => {
                 return(
                     <div className="w-full h-44 lg:ml-24 ml-10" key={index}>
-                        <img className="bg-slate-800 p-2 rounded-lg mb-6" src={job.logo} alt="logo"/>
+                        <img onClick={e => handleClick(e, job)} className="bg-slate-800 p-2 rounded-lg mb-6" src={job.logo} alt="logo"/>
                         <div className="text-gray-400 text-lg">
                             <ul className="flex flex-row space-x-6">
                                 <li>

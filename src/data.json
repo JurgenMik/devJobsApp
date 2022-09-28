@@ -63,8 +63,8 @@
   },
   {
     "id": 3,
-    "company": "Vector",
-    "logo": "./assets/logos/vector.svg",
+    "company": "Maker",
+    "logo": "./assets/logos/maker.svg",
     "logoBackground": "hsl(235, 10%, 23%)",
     "position": "Midlevel Back End Engineer",
     "postedAt": "1d ago",

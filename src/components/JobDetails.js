@@ -6,7 +6,7 @@ function JobDetails({ details }) {
         <div className="lg:w-1/2 w-2/3 absolute top-60">
             <div className="w-full h-44 bg-white space-x-1 rounded-lg grid grid-cols-3">
                 <div className="lg:w-2/3 w-4/5 flex justify-center items-center bg-slate-700 rounded-l-lg">
-                    <img className="lg:h-20 h-12 lg:w-32 w-16" src={details.logo} alt="logo"/>
+                    <img className="lg:h-20 h-12 lg:w-32 w-20" src={details.logo} alt="logo"/>
                 </div>
                 <div className="w-full col-span-2 flex items-center lg:space-x-64 space-x-6">
                     <div className="inline-block space-y-2">
