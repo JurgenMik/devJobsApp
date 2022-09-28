@@ -9,11 +9,12 @@ function App() {
     const [detailView, setDetailView] = useState(false);
     const [filterTitle, setFilterTitle] = useState('');
     const [filterLocation, setFilterLocation] = useState('');
+    const [filterContract, setFilterContract] = useState(false);
 
     const handleClick = (e, job) => {
         e.preventDefault();
         setJob(job);
-        setDetailView(true)
+        setDetailView(true);
     }
 
   return (
@@ -21,7 +22,7 @@ function App() {
         <div className="w-full h-72 bg-texture bg-cover bg-no-repeat flex items-center justify-center relative">
             <div className="lg:w-2/3 w-4/5 relative">
                 <img className="w-44 h-12 inline-block" src={'../assets/logo.svg'} alt="logo" />
-                {detailView ? null : <FilterBar setFilterTitle={setFilterTitle} setFilterLocation={setFilterLocation}/>}
+                {detailView ? null : <FilterBar setFilterTitle={setFilterTitle} setFilterLocation={setFilterLocation} setFilterContract={setFilterContract}/>}
              </div>
          </div>
         <div className="flex justify-center items-center">
@@ -30,7 +31,7 @@ function App() {
                     case true:
                         return <JobDetails details={job} />
                     default:
-                        return <DevJobs handleClick={handleClick} filterTitle={filterTitle} filterLocation={filterLocation}/>
+                        return <DevJobs handleClick={handleClick} filterTitle={filterTitle} filterLocation={filterLocation} filterContract={filterContract}/>
                 }
             })()}
         </div>
