@@ -18,4 +18,5 @@ Devjobs web app
 ![image](https://user-images.githubusercontent.com/89903354/192781979-3e043600-778c-43d7-8dd0-8c60f4b342d3.png)
 ### Built With
 * <strong>React</strong>
+* <strong>Node js </strong>
 * <strong>TailwindCSS - CSS framework</strong>

@@ -1,16 +1,19 @@
 import React, {useEffect, useState, useMemo} from 'react';
-import data from '../data.json';
+import axios from 'axios';
 
 function DevJobs({ handleClick, filterTitle, filterLocation, filterContract }) {
 
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        getJobs();
+        handleGET();
     }, []);
 
-    const getJobs = () => {
-        setJobs(jobs.concat(data));
+    const handleGET = () => {
+        axios.get("http://localhost:3001/jobs")
+            .then(response => {
+                setJobs(jobs.concat(response.data.data));
+            })
     }
 
     const filteredJobs = () => {
